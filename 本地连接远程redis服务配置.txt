@@ -1,0 +1,4 @@
+1. 服务器确定开放6379（或者设置的其他Redis端口）
+2. 修改redis配置文件 设置： 密码（requirepass ） 保护类型（protected-mode=no） 绑定（bind 127.0.0.1）
+3. cd ../安装目录/src
+4. nohup  ./redis-server ../安装目录/redis.conf &

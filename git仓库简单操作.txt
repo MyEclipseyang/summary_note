@@ -1,0 +1,11 @@
+1. git pull https://gitee.com/PublicLeague/league_mall.git
+2. git add .
+3. git commit https://gitee.com/PublicLeague/league_mall.git
+4. git push https://gitee.com/PublicLeague/league_mall.git
+
+注意：
+  如果出现 fatal: Authentication failed for ‘xxx’错误，需要重新设置用户名和邮箱
+
+
+  git config --global user.name  "zyy"
+  git config --global user.email  邮箱

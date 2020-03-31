@@ -1,0 +1,24 @@
+﻿1、首先配置npm的全局模块的存放路径、cache的路径，此处我选择放在：D:\Program Files\nodejs
+输入如下命令：
+
+npm config set prefix "D:\Program Files\nodejs\node_global"
+npm config set cache"D:\Program Files\nodejs\node_cache"
+
+
+项目下的package.json
+
+"scripts": {
+    "dev": "vue-cli-service serve",
+    "build:prod": "vue-cli-service build",
+    "build:stage": "vue-cli-service build --mode staging",
+    "preview": "node build/index.js --preview",
+    "lint": "eslint --fix --ext .js,.vue src",
+    "test:unit": "jest --clearCache && vue-cli-service test:unit",
+    "svgo": "svgo -f src/assets/icons/svg --config=src/assets/icons/svgo.yml",
+    "new": "plop"
+  }
+
+1. 拿到项目后首先要到项目目录下运行 cnmp install 来安装项目所依赖的其他模块
+2. 运行项目 cnpm run dev
+3. 打包vue项目： npm run build:prod --report
+4. 得到dist文件夹

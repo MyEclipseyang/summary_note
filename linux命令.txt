@@ -1,0 +1,5 @@
+查看软件安装目录 rpm -ql nginx 
+卸载指定软件 yum -y remove 包名
+查看进程 ss -tal 
+查看安装那些软件 rpm -qa|grep 包名
+nohup java -jar xxx.jar &
