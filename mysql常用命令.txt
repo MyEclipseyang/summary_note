@@ -1,0 +1,1 @@
+mysqldump -uroot -p  yxshop > /home/zyy/yxshop.sql
