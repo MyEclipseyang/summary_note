@@ -1,5 +1,7 @@
-﻿1、首先配置npm的全局模块的存放路径、cache的路径，此处我选择放在：D:\Program Files\nodejs
+1、首先配置npm的全局模块的存放路径、cache的路径，此处我选择放在：D:\Program Files\nodejs
 输入如下命令：
+安装cnpm:
+    npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 npm config set prefix "D:\Program Files\nodejs\node_global"
 npm config set cache"D:\Program Files\nodejs\node_cache"
