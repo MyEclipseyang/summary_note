@@ -1,1 +1,12 @@
+###mysql版本：5.7
+
+##备份到指定文件
 mysqldump -uroot -p  yxshop > /home/zyy/yxshop.sql
+
+##修改root密码
+ 1. 先将root密码设置为空 
+ update user set authentication_string='' where user='root';
+ 2. 设置密码（8要求大写字母/符号/数字）
+ ALTER  USER  'root'@'%' IDENTIFIED  WITH  mysql_native_password  BY  'Abc@123456';
+ 3. 刷新权限
+ flush privileges;
