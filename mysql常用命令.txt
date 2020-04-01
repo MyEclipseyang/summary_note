@@ -4,6 +4,12 @@
 mysqldump -uroot -p  yxshop > /home/zyy/yxshop.sql
 
 ##修改root密码
+#前置工作：
+ 1. 查看关于对密码的限制
+ SHOW VARIABLES LIKE 'validate_password%';
+ 2. 按需修改
+ set global validate_password.policy=0;
+
  1. 先将root密码设置为空 
  update user set authentication_string='' where user='root';
  2. 设置密码（8要求大写字母/符号/数字）
