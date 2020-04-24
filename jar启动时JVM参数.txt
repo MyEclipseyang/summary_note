@@ -1,0 +1,29 @@
+java
+    -Xms64m #JVM启动时的初始堆大小
+    -Xmx128m #最大堆大小
+    -Xmn64m #年轻代的大小，其余的空间是老年代
+    -XX:MaxMetaspaceSize=128m #
+    -XX:CompressedClassSpaceSize=64m #使用 -XX：CompressedClassSpaceSize 设置为压缩类空间保留的最大内存。
+    -Xss256k #线程
+    -XX:InitialCodeCacheSize=4m #
+    -XX:ReservedCodeCacheSize=8m # 这是由 JIT（即时）编译器编译为本地代码的本机代码（如JNI）或 Java 方法的空间
+    -XX:MaxDirectMemorySize=16m
+    -XX:NativeMemoryTracking=summary #开启内存追踪
+    -jar app.jar
+
+# 查看java运用pid
+jps -l 
+# 查看堆/方法区/线程等内存占用（必需启动内存追踪）
+jcmd 2923 VM.native_memory
+# 查看jvm默认值 Xmx Xms GC等
+java -XX:+PrintFlagsFinal -version
+java -XX:+PrintCommandLineFlags -version
+# 查看gc次数/时间
+jstat -gcutil  15004  / jstat -gc  15004
+# 查看线程栈信息
+jstack -l pid
+# 可视化查看内存/线程的信息
+jvisualvm / jconsole
+# 导出dump文件
+jmap -dump:format=b,file=heapdump.hprof  pid
+使用jvisualvm可打开hprof文件
