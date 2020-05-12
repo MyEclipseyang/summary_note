@@ -7,7 +7,7 @@ mysqldump -uroot -p  yxshop > /home/zyy/yxshop.sql
 #前置工作：
  1. 查看关于对密码的限制
  SHOW VARIABLES LIKE 'validate_password%';
- 2. 按需修改
+ 2. 按需修改(我这里只修改了对密码模式的限制)
  set global validate_password.policy=0;
 
  1. 先将root密码设置为空 
