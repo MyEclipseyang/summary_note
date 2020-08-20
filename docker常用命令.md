@@ -29,3 +29,8 @@
 > docker exec -it ba94d39bb1cd bash
 
 ![image-20200720092915500](C:\Users\zyy\AppData\Roaming\Typora\typora-user-images\image-20200720092915500.png)
+
+#### 6.退出容器
+
+> 1. 退出不关闭容器：Ctrl + P + Q
+> 2. 退出并关闭容器：exit
