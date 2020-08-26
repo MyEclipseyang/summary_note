@@ -1,8 +1,12 @@
-top 查看内存和cpu使用情况
-tail 查看文件后10行
+1. top 查看内存和cpu使用情况
+2. tail 查看文件后10行
 
-查看软件安装目录 rpm -ql nginx 
-卸载指定软件 yum -y remove 包名
-查看进程 ss -tal 
-查看安装那些软件 rpm -qa|grep 包名
-nohup java -jar xxx.jar &
+3. 查看软件安装目录 rpm -ql nginx 
+4. 卸载指定软件 yum -y remove 包名
+5. 查看进程 ss -tal 
+6. 查看安装那些软件 rpm -qa|grep 包名
+7. nohup java -jar xxx.jar &
+8. 输出到文件 ls -l > directory.txt
+9. 追加 ls -l >> directory.txt
+10. ps -ef | grep java
+11. ps -ef | grep java | awk {'print $2'} 把第二列输出到控制台

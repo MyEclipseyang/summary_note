@@ -34,3 +34,9 @@
 
 > 1. 退出不关闭容器：Ctrl + P + Q
 > 2. 退出并关闭容器：exit
+
+#### 7.在本机和容器之间传输文件
+
+> 本机到容器  docker cp  /home/zyy/a.txt  容器id:/home/zs
+>
+> 容器到本机 docker cp  容器id:/home/zs   /home/zyy/a.txt
