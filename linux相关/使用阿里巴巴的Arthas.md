@@ -18,7 +18,7 @@
 #### 1.3反编译类并输出到本地
 
 > ```shell
-> jad --source-only com.example.demo.arthas.user.UserController > /tmp/UserController.java
+> jad --source-only edp.davinci.controller.LoginController > /tmp/LoginController.java
 > ```
 
 #### 1.4修改文件
@@ -29,10 +29,11 @@
 
 #### 1.5重新编译.java文件
 
->  mc -c 2dda6444  /temp/LoginController.java    -d /temp/
+>  mc -c 2dda6444  /temp/LoginController.java    -d /temp/  【说明】2dda6444 是该类的类加载器的hash值
 
 #### 1.6重新加载.class文件
 
->  mc -c 2dda6444  /temp/LoginController.java    -d /temp/  2dda6444 是该类的类加载器的hash值
->
-> 
+>  ```shell
+>redefine /tmp/com/example/demo/arthas/user/UserController.class
+> ```
+
