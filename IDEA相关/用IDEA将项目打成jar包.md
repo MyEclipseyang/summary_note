@@ -2,17 +2,17 @@
 
 #### 1.选择project structure
 
-![image-20200906012155028](C:\Users\张阳阳\AppData\Roaming\Typora\typora-user-images\image-20200906012155028.png)
+![image-20200906012155028](.\img\image-20200906012155028.png)
 
 #### 2.选择artifacts
 
-![image-20200906012355768](C:\Users\张阳阳\AppData\Roaming\Typora\typora-user-images\image-20200906012355768.png)
+![image-20200906012355768](.\img\image-20200906012355768.png)
 
 #### 3.配置启动类类和Manifest文件到resource目录下
 
 > 保存即可
 
-![image-20200906012606870](C:\Users\张阳阳\AppData\Roaming\Typora\typora-user-images\image-20200906012606870.png)
+![image-20200906012606870](.\img\image-20200906012606870.png)
 
 #### 4.生成jar包
 
