@@ -109,3 +109,4 @@ JNIEXPORT void JNICALL Java_HelloNative_hello(JNIEnv* env, jobject obj) {
     }
 ```
 
+> 编辑`crontab`文件，一般在`/etc`下
