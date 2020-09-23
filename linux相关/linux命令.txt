@@ -10,3 +10,5 @@
 9. 追加 ls -l >> directory.txt
 10. ps -ef | grep java
 11. ps -ef | grep java | awk {'print $2'} 把第二列输出到控制台
+12. find /home/lifeccp/dicom/studies -mtime +21 -name "*.*" -exec rm -Rf {} \; 按时间批量删除文件
+13. du -sh ./* 显示文件大小
