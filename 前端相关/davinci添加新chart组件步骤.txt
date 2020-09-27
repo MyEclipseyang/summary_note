@@ -1,0 +1,4 @@
+1. config/chart 添加tree.ts文件
+2. ChartTypes 添加 Tree枚举属性
+3. config/index 的widgetlibs加入tree实例
+4. render/index 添加tree分支case
