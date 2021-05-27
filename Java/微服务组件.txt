@@ -1,0 +1,8 @@
+微服务组件
+
+1.服务管理 eureka consul nacos zookeeper
+2.服务调用 open-feign
+3.服务负载均衡 ribbon
+4.服务降级、熔断、限流 hystrix sentinel
+5.服务路由管理 zuul getway
+6.服务调用链分析 sleuth
