@@ -1,3 +1,4 @@
 1. ipconfig /? 加/?显示命令帮助
 2. netstat -nao| find /I "6379"
 3. set 环境变量相关
+4. taskkill 终止进程

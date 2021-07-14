@@ -1,0 +1,97 @@
+redis
+1.是否存在该key 1/存在 0/不存在
+    exists zyy:age
+2.删除key 1/删除成功 0/不存在该key
+    del zyy:age
+3.查看key下值的类型
+    type zyy:age
+4.设置key的过期时间
+    expire zyy:age 10
+5.查看key的剩余时间
+    ttl zyy:age
+
+string
+1.设置并获取
+    set suixingpay:5719 zyy
+    get suixingpay:5719
+2.只有当值存在时才能设置成功
+    set suixingpay:5719 zyy nx
+3.只有当值不存在时才能设置成功
+    set suixingpay:5719 zyy xx
+4.当值为数字时
+    set zyy:age 21
+    incr zyy:age
+    incrby zyy:age 10
+5.获取旧的值并设置新值(可以避免latency)
+    getset zyy:age 0
+6.批量设置和获取
+    mset a 10 b 20 c 30
+    mget a b c
+7.设置过期时间
+    set d ex 10 秒
+    set d px 10 毫秒
+
+list
+1.添加
+    lpush usernameList A
+    rpush usernameList B
+2.获取指定区间的元素
+    lrange usernameList 0 0  第一个
+    lrange usernameList 0 1  第一个 和 第二个
+    lrange usernameList 0 -1 所有的
+3.获取并移除元素
+    lpop usernameList
+    rpop usernameList
+4.移除指定区间外的元素
+    ltrim 0 9
+5.阻塞获取元素所属的list和该元素同时移除元素
+    blpop usernameList 5
+    brpop usernameList 5
+    brpop usernameList idList 5
+6.获取list的长度
+    llen usernameList
+
+hash
+1.设置值
+    hset user:5719 username zyy age 21
+    hset user:5719 sex 1 (继续增加值)
+2.获取
+    hget user:5719 age
+    hgetall user:5719
+    1) "username"
+    2) "zyy"
+    3) "age"
+    4) "21"
+    5) "sex"
+    6) "1"
+    hmget user:5719 username age sex
+    1) "zyy"
+    2) "21"
+    3) "1"
+
+set redis中不稳定的数据结构
+1.设置值
+    sadd idSet 1 2 3
+2.获取值
+    smembers idSet
+3.判断是否再set中 1/在 2/不在
+    sismember idSet 2
+4.求交集
+    sinter tagSet1 tagSet2 tagSet3
+5.随机获取并移除元素
+    spop idSet
+    spop idSet 3 移除三个
+6.获取set的长度
+    scard idSet
+
+zset
+1.设置值
+    zadd hackers 100 zyy 90 lht 80 wd
+2.获取值
+    zrange hackers 0 -1 升序
+    zrange hackers 0 -1 withscores
+    zrevrange hackers 0 -1 降序
+    zrangebyscore hackers 0 90 获取指定范围分数的
+    zrangebyscore hackers -inf 90 从负无穷开始
+    zrank hackers zyy 获取排名（升序）
+    zrevrank hackers zyy 获取排名（降序）
