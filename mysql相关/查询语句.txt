@@ -1,0 +1,9 @@
+SELECT 
+task_base_info_uuid,in_mno 
+FROM 
+`t_task_user_info`  
+WHERE  
+create_time BETWEEN '2021-06-01' AND '2021-06-09' 
+AND task_status IN ('00','01')
+GROUP BY task_base_info_uuid,in_mno 
+HAVING COUNT(*) > 1
