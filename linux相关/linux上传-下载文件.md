@@ -18,7 +18,7 @@ scp -r /home/work/sourcedir work@192.168.0.10:/home/work/   #拷贝文件夹，�
 #### 2.rz & sz
 
 ```shell
-yum install lrzsz
+yum install -y lrzsz
 
 # 下载文件到本地
 sz /home/app/hs_err_pid32230.log
