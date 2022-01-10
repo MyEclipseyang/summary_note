@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://www.cnblogs.com/jins-note/p/10749533.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="never">
+    <meta name="description" content="版权声明：本文为转载文章，遵循 CC 4.0 by-sa 版权协议，转载请附上原文出处链接和本声明。本文链接：https://blog.csdn.net/Bob__yuan/article/detai">
+    <meta property="og:description" content="版权声明：本文为转载文章，遵循 CC 4.0 by-sa 版权协议，转载请附上原文出处链接和本声明。本文链接：https://blog.csdn.net/Bob__yuan/article/detai">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="https://common.cnblogs.com/favicon.svg" type="image/svg+xml">
+    
+    <link rel="stylesheet" href="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/blog-common.min.css">
+    <link id="MainCss" rel="stylesheet" href="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/bundle-blacklowkey.min.css">
+    <link type="text/css" rel="stylesheet" href="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/cnblogs.css">
+    <link type="text/css" rel="stylesheet" href="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/custom.css">
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/bundle-blacklowkey-mobile.min.css">
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jins-note/rss">
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jins-note/rsd.xml">
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jins-note/wlwmanifest.xml">
+    <script type="text/javascript" async="" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/analytics.js.下载"></script><script async="" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/analytics.js.下载"></script><script>
+        var currentBlogId = 453490;
+        var currentBlogApp = 'jins-note';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'BlackLowKey';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+    </script>
+        <script>
+            var currentPostDateAdded = '2019-04-22 01:01';
+        </script>
+    <script src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+    <script src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/blog-common.min.js.下载"></script><style type="text/css">.medium-zoom-overlay{position:fixed;top:0;right:0;bottom:0;left:0;opacity:0;transition:opacity .3s;will-change:opacity}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{position:relative;cursor:pointer;cursor:zoom-out;will-change:transform}</style>
+    <script type="text/x-mathjax-config;executed=true">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/MathJax.js.下载"></script>
+    
+    <script type="text/javascript">
+        window.codeHighlightEngine = 1
+        window.enableCodeLineNumber = false
+    </script>
+<meta name="google-site-verification" content="XPr7ud41rS116Z9geDr3HwiX8Qutr98XkMrGOb_tAEE"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="skin-blacklowkey no-navbar"><div id="MathJax_Message" style="display: none;"></div>
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc navbar-custom">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/logo.svg" alt="博客园Logo"></a></li>
+                <li><a href="https://www.cnblogs.com/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;skin-navbar-sitehome&#39;)">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;skin-navbar-news&#39;)">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;skin-navbar-q&#39;)">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;skin-navbar-brands&#39;)">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;skin-navbar-ing&#39;)">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;skin-navbar-edu&#39;)">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3">
+                        <button type="submit" id="zzk_search_button">
+                            <img src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/search.svg" alt="搜索">
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔" style="display: none;">
+                        <img id="new_post_icon" class="navbar-icon" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/newpost.svg" alt="写随笔">
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客" style="display: none;">
+                        <img id="myblog_icon" class="navbar-icon" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/myblog.svg" alt="我的博客">
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息" style="display: none;">
+                        <img id="msg_icon" class="navbar-icon" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/message.svg" alt="短消息">
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown" style="display: none;">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/avatar-default.svg" alt="用户头像">
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/lite-mode-check.svg" class="hide"><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/" style="display: inline;">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()" style="display: inline;">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html"><script type="text/javascript">window['__document_write_ajax_callbacks__']['2']();</script><script type="text/javascript">window['__document_write_ajax_callbacks__']['1']();</script></div>
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/jins-note/"><img id="blogLogo" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/logo.gif" alt="返回主页"></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jins-note/">Jerry_Jin</a>
+</h1>
+<h2>迎着永恒的东风，把红旗插到九重</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jins-note/">
+首页</a>
+</li>
+<li>
+
+
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/Jerry_Jin">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/jins-note/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+<li><a href="https://www.cnblogs.com/jins-note/p/9635362.html" class="menu">关于</a></li></ul>
+
+
+		<div class="blogStats">
+			<span id="stats_post_count">随笔 - 326&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 57&nbsp; </span>
+<span id="stats-total-view-count">阅读 - 
+<span title="总阅读数: 1498652">
+149万</span></span>
+
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jins-note/p/10749533.html">
+    <span>三阶魔方7步还原法详解 简单</span>
+    
+
+
+
+</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>版权声明：本文为转载文章，遵循 CC 4.0 by-sa 版权协议，转载请附上原文出处链接和本声明。<br>本文链接：https://blog.csdn.net/Bob__yuan/article/details/86546920<br><span style="color: rgba(79, 79, 79, 1)"> </span></p>
+<p class="js-evernote-checked" style="color: rgba(79, 79, 79, 1)" data-evernote-id="817">&nbsp;</p>
+<p class="js-evernote-checked" style="color: rgba(79, 79, 79, 1)" data-evernote-id="817"> 首先要对三阶魔方有一个整体的理解，就是三阶魔方的轴是固定的，也就是说，在转一个面的时候，只有<span>&nbsp;</span>8<span>&nbsp;</span>个块在动（因为中心块相对位置是永远不变的），这一点很重要。还有就是三阶魔方一共 9 + 8 + 9 = 26 个块，其中有棱块<span>&nbsp;</span>12 个（每层4个），角块<span>&nbsp;</span>8 个，中心块<span>&nbsp;</span>6 个（对应6个不同颜色的面），如下图。</p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="823"><img class="js-evernote-checked medium-zoom-image" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130347763-2111675778.png" alt="" width="60%" height="320" data-evernote-id="824"></div>
+<p class="js-evernote-checked" style="color: rgba(79, 79, 79, 1)" data-evernote-id="825">  其次需要知道的是三阶魔方公式的含义。公式的定义是在魔方相对自己的位置不变的情况下成立的，也就是在进行一个公式之前，红色面冲自己，白色面朝上，那么这个公式期间，魔方始终保持红色冲自己，白色朝上，进行其他公式之前可以变换魔方的朝向，但是按照公式旋转期间，魔方朝向是不变的，这也很重要！！。这样才能引出公式中字母表示方法（没有撇就是顺时针，有撇就是逆时针，下标有2就是180度旋转，没有就是90度），顺逆时针都是从改该方向上看，这个面是什么方向转，所以从正面看 R 和 L 的方向是反着的：<br class="js-evernote-checked" data-evernote-id="828">  <strong class="js-evernote-checked" data-evernote-id="829">R: 右侧面顺时针旋转，R<sup class="js-evernote-checked" style="font-size: 0.75rem" data-evernote-id="830">’</sup>: 右侧面逆时针旋转, R<sub class="js-evernote-checked" style="font-size: 0.75rem" data-evernote-id="831">2</sub>: 右侧面旋转180度</strong><br class="js-evernote-checked" data-evernote-id="832">  <strong class="js-evernote-checked" data-evernote-id="833">L: 左侧面 … 同理</strong><br class="js-evernote-checked" data-evernote-id="834">  <strong class="js-evernote-checked" data-evernote-id="835">F: 正面 … 同理</strong><br class="js-evernote-checked" data-evernote-id="836">  <strong class="js-evernote-checked" data-evernote-id="837">B: 背面 … 同理</strong><br class="js-evernote-checked" data-evernote-id="838">  <strong class="js-evernote-checked" data-evernote-id="839">U: 顶面 … 同理</strong><br class="js-evernote-checked" data-evernote-id="840">  因为底面还原后就不会再动了，一直在底下呆着，所以公式中不会出现底面这个东西。</p>
+<p class="js-evernote-checked" style="color: rgba(79, 79, 79, 1)" data-evernote-id="842">  最后，就是这篇文章要将的傻瓜公式（有点傻瓜相机的感觉，因为我的公式是一个步骤记一个公式就可以了，虽然会慢，但是一学就会，一看就懂）了，也就是分七个阶段还原魔方（先把七个步骤写出来，后边再一一讲解）：<br class="js-evernote-checked" data-evernote-id="845">  1、底面十字<br class="js-evernote-checked" data-evernote-id="846">  2、底面还原（一层归位）<br class="js-evernote-checked" data-evernote-id="847">  3、中间层还原（两层归位）<br class="js-evernote-checked" data-evernote-id="848">  4、顶面十字<br class="js-evernote-checked" data-evernote-id="849">  5、顶面还原<br class="js-evernote-checked" data-evernote-id="850">  6、顶层中间过程（只剩最后3或4个棱块）<br class="js-evernote-checked" data-evernote-id="851">  7、顶层还原（完成!）<br class="js-evernote-checked" data-evernote-id="852">  接下来一步一步讲：</p>
+<p class="js-evernote-checked" style="color: rgba(79, 79, 79, 1)" data-evernote-id="817">&nbsp;</p>
+<h2 class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="853">一、底面十字</h2>
+<p class="js-evernote-checked" data-evernote-id="854">  前后如下图所示。</p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="855"><img class="js-evernote-checked medium-zoom-image" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130349171-2120510305.png" alt="" width="50%" height="198" data-evernote-id="856"></div>
+<p class="js-evernote-checked" data-evernote-id="857">  还原魔方第一步就是选一个一开始想拼好的面（就是喜欢哪个颜色，先把那个面的9个块拼好），这一步还不是拼好，而是拼出个十字。虽然叫作底面，但是还原之后还是要要把这个面朝上观察比较方便，但是因为公式 3-7 步都是这个面朝下，所以我管它叫作底面。<br class="js-evernote-checked" data-evernote-id="859">  这一步其实是没有公式的，只需要记住我们的目的是将底面的四个棱块对位到对应位置，同时记住上边讲的旋转一个面只会有8个块动，就可以完成了，只不过是熟能生巧，转多了就有比较快速的想法进行对位了。</p>
+<h2 class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="860">二、底面还原</h2>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="861"><img class="js-evernote-checked medium-zoom-image" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130351675-1037077222.png" alt="" width="50%" height="204" data-evernote-id="862"></div>
+<p class="js-evernote-checked" data-evernote-id="863">  还是以白色为底面，和第一步一样没有公式，就是简单的角块移动。</p>
+<h2 class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="865">三、中间层还原</h2>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="866"><img class="js-evernote-checked medium-zoom-image" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130354181-459416023.png" alt="" width="50%" height="205" data-evernote-id="867"></div>
+<p class="js-evernote-checked" data-evernote-id="868">  前两步结束底面9个块就都归位了，把魔方掉个个儿，让底面真的朝下（白色朝下），然后它就一直朝下了。<br class="js-evernote-checked" data-evernote-id="870">  这一步就是还原中间一层的四个棱块（只关心棱块即可！！！！）。这一步的思想就是，先看顶面颜色（也就是顶面中心块的颜色），然后在顶层四个棱块中找没有这个颜色的，如果找到了，那就把第三层的棱块转到相应颜色的面上，再看顶面上这个块是什么颜色（只可能是左边面颜色或者右边面颜色），<br class="js-evernote-checked" data-evernote-id="873">  如果是左边面，如下图，那就用公式 F<sub class="js-evernote-checked" style="font-size: 0.75rem" data-evernote-id="875">3.1</sub>:</p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="876"><span class="js-evernote-checked" style="font-size: xx-large" data-evernote-id="877">公式 F<sub class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="878">3.1</sub><span>&nbsp;</span>:U<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="879">'</sup>L<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="880">'</sup>ULUFU<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="881">'</sup>F<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="882">'</sup></span></div>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="883"><img class="js-evernote-checked" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130356392-355871210.png" alt="" width="25%" height="245" data-evernote-id="884"></div>
+<p class="js-evernote-checked" data-evernote-id="885">  如果是右边面，如下图，那就用公式 F<sub class="js-evernote-checked" style="font-size: 0.75rem" data-evernote-id="887">3.2</sub>:</p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="888"><span class="js-evernote-checked" style="font-size: xx-large" data-evernote-id="889">公式 F<sub class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="890">3.2</sub><span>&nbsp;</span>: URU<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="891">'</sup>R<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="892">'</sup>U<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="893">'</sup>F<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="894">'</sup>UF</span></div>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="895"><img class="js-evernote-checked" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130358104-1789106206.png" alt="" width="25%" height="252" data-evernote-id="896"></div>
+<p class="js-evernote-checked" data-evernote-id="897">  上边两个公式其实很容易看出来是对称的，总结来说，就是要是要归位到左边，那就先把他往右掰，如果要归位到右边，那就先把他往左掰，然后用一个小白块（底面颜色）先出去，带上它，再回来。魔方小站里边管这一步叫作“远切回回，接孩子放学”，公式中体现不出来，但是实际拧的时候，会发现，前4步把孩子送到“学校”（离远点），后四步转一下魔方朝向，去接孩子，然后两个块一起“回家”，还是蛮形象的，“远切回回，接孩子放学”。<br class="js-evernote-checked" data-evernote-id="901">  如果四个棱块都有黄色，那就说明中间层棱块已经在中间层上了，因为没有别的地方可以躲了 = =，要不就是反了（如下图），要不就是已经好了，要不就是出现在不该在的位置，那么就用上述两个公式中其中一个，把这个不该在这个位置的棱块转出来，再按上边公式归位到正确位置即可。</p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="902"><img class="js-evernote-checked" alt="" width="25%" height="227" data-evernote-id="903"></div>
+<h2 class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="904">四、顶面十字</h2>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="905"><img class="js-evernote-checked medium-zoom-image" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130400453-1568017300.png" alt="" width="50%" height="228" data-evernote-id="906"></div>
+<p class="js-evernote-checked" data-evernote-id="907">  顶面十字过程，只需要观察顶面的棱块即可（角块不关心），所以这一步的示例图就用平面图代替（顶面）。这一步的公式依然只有一个，不过对于不同情况，需要使用 0 ~ 3 次公式进行还原（公式中顶面仍然是T，不过这里只展示顶面平面图）。</p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="909"><span class="js-evernote-checked" style="font-size: xx-large" data-evernote-id="910">公式 F<sub class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="911">4</sub><span>&nbsp;</span>: FRUR<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="912">'</sup>U<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="913">'</sup>F<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="914">'</sup></span></div>
+<p class="js-evernote-checked" data-evernote-id="915">  这一个步骤，只观察顶面棱块和中心块，也就是只关心这个 5 个块，一共只会出现4总情况：<br class="js-evernote-checked" data-evernote-id="916">  1、一个点：就是只有中心块，4个棱块在顶面的颜色都不是中心块颜色（情况1）<br class="js-evernote-checked" data-evernote-id="918">  2、小拐弯：就是中心块和左边、上边棱块是对的，其他情况旋转一下可以得到这个相对位置（情况2）<br class="js-evernote-checked" data-evernote-id="920">  3、“一”字<span>&nbsp;</span>：就是中心块和左边、右边边棱块是对的，上下对的情况旋转一下可以得到这个相对位置（情况3）<br class="js-evernote-checked" data-evernote-id="922">  4、“十”字：就是中心块以及4个棱块都是对的了，这是这一步的目标（情况4）<br class="js-evernote-checked" data-evernote-id="925">  如果第三步完成后，直接就是情况4，那第4步已经完成，可以跳过了。如果不是情况4，那就按照下图所示路线，进行最少一次，最多三次的公式 F<sub class="js-evernote-checked" style="font-size: 0.75rem" data-evernote-id="926">4</sub>，一定要注意顶面棱块的相对位置！！也就是<span>&nbsp;</span>“一”字 一定是横着的，小拐弯 一定在左上角。</p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="928"><img class="js-evernote-checked medium-zoom-image" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130403179-1205243534.png" alt="" width="80%" height="155" data-evernote-id="929"></div>
+<p class="js-evernote-checked" data-evernote-id="930">  另外，因为小拐弯一次公式后，就是情况3，不需要再旋转，所以其实公式中的 F 和 F<sup class="js-evernote-checked" style="font-size: 0.75rem" data-evernote-id="931">’</sup><span>&nbsp;</span>是可以省略的，多练一练就熟悉了。</p>
+<h2 class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="932">五、顶面还原</h2>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="933"><img class="js-evernote-checked medium-zoom-image" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130404427-448966587.png" alt="" width="50%" height="230" data-evernote-id="934"></div>
+<p class="js-evernote-checked" data-evernote-id="935">  这一步的目的就是让顶面9个块颜色变为一致（只需要调整顶层四个角块的朝向）。公式依然只有一个，虽然确实是有别的公式可以更快完成，但是本着“傻瓜公式”原则，只需要记一个公式即可。</p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="937"><span class="js-evernote-checked" style="font-size: xx-large" data-evernote-id="938">公式 F<sub class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="939">5</sub><span>&nbsp;</span>: RU<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="940">'</sup>U<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="941">'</sup>R<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="942">'</sup>U<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="943">'</sup>RU<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="944">'</sup>R<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="945">'</sup></span></div>
+<p class="js-evernote-checked" data-evernote-id="946">  这一步情况比较多，记住每种情况怎么拿着魔方即可，因为公式只有一个（而且这个公式很好记的一点是，<strong class="js-evernote-checked" data-evernote-id="948"><span class="js-evernote-checked" style="color: rgba(255, 0, 0, 1)" data-evernote-id="949">顶面只会逆时针转！上右右下右上右下！</span></strong>）。</p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="950"><img class="js-evernote-checked medium-zoom-image" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130406835-548468331.png" alt="" width="70%" height="337" data-evernote-id="951"></div>
+<p class="js-evernote-checked" data-evernote-id="952">  总结来说，就是出现像小鱼的情况，那就让鱼头朝右上方即可，如果忘记了魔方朝向应该是什么样，就一直重复公式5，知道出现很重要的那条小鱼为止。<br class="js-evernote-checked" data-evernote-id="955">  <span class="js-evernote-checked" style="color: rgba(255, 0, 0, 1); font-family: 黑体; font-size: large" data-evernote-id="956">其实这步用“上右右下右上右下”记好记，“上”代表右侧面向上拧（顺时针），“右”代表顶面向右拧（逆时针），“下”代表右侧面向下拧。可以发现有几次“上”，就一定有几次“下”（因为要保证底面不被破坏），而且顶面只向右拧，且一定是4的倍数次（因为要让底面出去的小白块回来）。</span><br class="js-evernote-checked" data-evernote-id="958">  多转几次就会发现，其实这个公式5，是让顶面的四个角块交叉变换，如下图所示。</p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="960"><img class="js-evernote-checked" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130407271-1035493649.png" alt="" width="15%" height="142" data-evernote-id="961"></div>
+<h2 class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="962">六、顶层中间过程</h2>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="963"><img class="js-evernote-checked medium-zoom-image" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130408339-2128945304.png" alt="" width="50%" height="225" data-evernote-id="964"></div>
+<p class="js-evernote-checked" data-evernote-id="965">  第五步结束，顶面颜色都对了，但是顶层的9个颜色不一定是对的，这一步是中间过程，目的是让顶层只有棱块不对，角块都对。公式依然只有一个。</p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="967"><span class="js-evernote-checked" style="font-size: xx-large" data-evernote-id="968">公式 F<sub class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="969">6</sub><span>&nbsp;</span>: RB<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="970">'</sup>RF<sub class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="971">2</sub>R<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="972">'</sup>BRF<sub class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="973">2</sub>R<sub class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="974">2</sub></span></div>
+<p class="js-evernote-checked" data-evernote-id="975">  这一步一共只有三种情况：<br class="js-evernote-checked" data-evernote-id="976">  <strong class="js-evernote-checked" data-evernote-id="977">1、没有一个面上角块是对的</strong><br class="js-evernote-checked" data-evernote-id="978">  <strong class="js-evernote-checked" data-evernote-id="979">2、有一个面角块是对的</strong><br class="js-evernote-checked" data-evernote-id="980">  <strong class="js-evernote-checked" data-evernote-id="981">3、四个面角块都是对的。</strong></p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="982"><img class="js-evernote-checked medium-zoom-image" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130410933-1273731360.png" alt="" width="75%" height="219" data-evernote-id="983"></div>
+<p class="js-evernote-checked" data-evernote-id="984">  我们的目标就是情况3，所以如果直接就是情况3，这一步就跳过了。</p>
+<h2 class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="985">七、顶层还原</h2>
+<p class="js-evernote-checked" data-evernote-id="986">  这是三阶魔方的最后一个步骤，把顶层的4个棱块归位。这步一共也是只有三种情况：<br class="js-evernote-checked" data-evernote-id="987">  <strong class="js-evernote-checked" data-evernote-id="988">1、四个棱块都不对</strong><br class="js-evernote-checked" data-evernote-id="989">  <strong class="js-evernote-checked" data-evernote-id="990">2、有一个棱块是对的</strong><br class="js-evernote-checked" data-evernote-id="991">  <strong class="js-evernote-checked" data-evernote-id="992">3、四个棱块都是对的。</strong><br class="js-evernote-checked" data-evernote-id="993">  目标就是情况3，不用多说，因为情况3魔方就已经还原了。第2中情况是有两种小情况的，一是三个不对的棱块颜色应该按照顺时针转就对了，二是逆时针转。再次本着“傻瓜公式”原则，只给出一个公式。公式7是从顶面观察的效果。其实很好记，就是4个棱块都不对时，魔方朝向随便，拧一次公式后，会有一个棱块是对的，把这个面朝后边，再拧公式即可。公式可以同5中一样，记为<span>&nbsp;</span><strong class="js-evernote-checked" data-evernote-id="994"><span class="js-evernote-checked" style="color: rgba(255, 0, 0, 1)" data-evernote-id="995">上右上左上左上右下右，右侧180。</span></strong></p>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="996"><span class="js-evernote-checked" style="font-size: xx-large" data-evernote-id="997">公式 F<sub class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="998">7</sub><span>&nbsp;</span>: RU<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="999">'</sup>RURURU<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="1000">'</sup>R<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="1001">'</sup>U<sup class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="1002">'</sup>R<sub class="js-evernote-checked" style="font-size: 1.5rem" data-evernote-id="1003">2</sub></span></div>
+<div class="js-evernote-checked" style="color: rgba(0, 0, 0, 0.75); font-size: 0.875rem" data-evernote-id="1004"><img class="js-evernote-checked medium-zoom-image" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/1470684-20190422130411344-1050830029.png" alt="" width="50%" height="293" data-evernote-id="1005"></div>
+<p class="js-evernote-checked" data-evernote-id="1006">  写在最后，个人认为三阶魔方是 n 阶常规魔方的基础，会了三阶魔方就完全会二阶魔方，会了一大半四阶魔方，以及会了三阶“变形金刚”魔方，所以这篇“傻瓜公式”写的还是比较认真，详细的，希望大家喜欢= =。</p>
+<p class="js-evernote-checked" data-evernote-id="1006">&nbsp;</p>
+<p class="js-evernote-checked" data-evernote-id="1006">&nbsp;</p>
+<p class="js-evernote-checked" data-evernote-id="1006">&nbsp;</p>
+<div style="color: rgba(128, 128, 128, 1)"><small>来源：&nbsp;<a href="https://blog.csdn.net/bob__yuan/article/details/86546920">https://blog.csdn.net/bob__yuan/article/details/86546920</a></small></div>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature">
+    <p></p>
+<p>欢迎转载，转载请保留页面地址。帮助到你的请点个推荐。</p>
+<p>出处：<a href="https://www.cnblogs.com/jins-note/p/10749533.html">https://www.cnblogs.com/jins-note/p/10749533.html</a></p></div>
+<div class="clear"></div>
+<div id="blog_post_info_block"><div id="BlogPostCategory">
+    分类: 
+            <a href="https://www.cnblogs.com/jins-note/category/1283205.html" target="_blank">Others</a></div>
+
+
+    <div id="blog_post_info">
+<div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(10749533,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+        <a id="green_channel_follow" onclick="follow(&#39;3c2a710e-6cbc-44b6-8536-08d60693dd81&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/jins-note/" target="_blank"><img src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/20180821182229.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/jins-note/">Jerry_Jin</a><br>
+            <a href="https://home.cnblogs.com/u/jins-note/followees/">关注 - 0</a><br>
+            <a href="https://home.cnblogs.com/u/jins-note/followers/">粉丝 - 55</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;3c2a710e-6cbc-44b6-8536-08d60693dd81&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(10749533,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">1</span>
+    </div>
+    <div class="buryit" onclick="votePost(10749533,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+    <div class="clear"></div>
+    <div id="post_next_prev">
+
+    <a href="https://www.cnblogs.com/jins-note/p/10641970.html" class="p_n_p_prefix">« </a> 上一篇：    <a href="https://www.cnblogs.com/jins-note/p/10641970.html" title="发布于 2019-04-02 12:52">语义分割的简单指南 A Simple Guide to Semantic Segmentation</a>
+    <br>
+    <a href="https://www.cnblogs.com/jins-note/p/10826272.html" class="p_n_p_prefix">» </a> 下一篇：    <a href="https://www.cnblogs.com/jins-note/p/10826272.html" title="发布于 2019-05-07 16:23">协方差矩阵的几何解释</a>
+
+</div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2019-04-22 13:01</span>&nbsp;
+<a href="https://www.cnblogs.com/jins-note/">Jerry_Jin</a>&nbsp;
+阅读(<span id="post_view_count">315908</span>)&nbsp;
+评论(<span id="post_comment_count">6</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10749533" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(10749533);return false;">收藏</a>&nbsp;
+<a href="javascript:void(0)" onclick="reportManager.report({ currentUserId: &#39;&#39;, targetType: &#39;blogPost&#39;, targetId: &#39;10749533&#39;, targetLink: &#39;https://www.cnblogs.com/jins-note/p/10749533.html&#39;, title: &#39;三阶魔方7步还原法详解 简单&#39; })">举报</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+
+<script src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/highlight.min.js.下载" async="" onload="markdown_highlight()"></script>
+<script>
+    var allowComments = true, cb_blogId = 453490, cb_blogApp = 'jins-note', cb_blogUserGuid = '3c2a710e-6cbc-44b6-8536-08d60693dd81';
+    var cb_entryId = 10749533, cb_entryCreatedDate = '2019-04-22 13:01', cb_postType = 1;
+    updatePostStats(
+        [cb_entryId],
+        function(id, count) { $("#post_view_count").text(count) },
+        function(id, count) { $("#post_comment_count").text(count) })
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+</script>
+
+<a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/jins-note/p/10749533.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/jins-note/p/10749533.html#top">返回顶部</a></div>
+    <div id="comment_form_container" style="visibility: visible;"><div class="login_tips">
+    登录后才能查看或发表评论，立即 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return account.login(&#39;!comments&#39;);">登录</a> 或者
+    <a href="https://www.cnblogs.com/">逛逛</a> 博客园首页
+</div>
+</div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"><a href="https://cloud.baidu.com/campaign/bccdiscount/index.html?track=cp:bokeyuan|pf:pc|pp:H-bokeyuan-21bccsanqi-neiyewenzilian|pu:21bccsanqi-neiyewenzilian|ci:21bcc|kw:10370321" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-百度智能云&#39;)">【推荐】百度智能云超值优惠：新用户首购云服务器1核1G低至69元/年</a><br><a href="http://www.uccpsoft.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-ucancode&#39;)">【推荐】跨平台组态\工控\仿真\CAD 50万行C++源码全开放免费下载！</a><br><a href="https://www.aliyun.com/minisite/goods?taskCode=yds2021-09zy&amp;recordId=883117&amp;userCode=swh7dvlt" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-阿里云-cps&#39;)">【推荐】阿里云云大使特惠：新用户购ECS服务器1核2G最低价87元/年</a><br><a href="https://brands.cnblogs.com/huawei" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-华为专区&#39;)">【推荐】和开发者在一起：华为开发者社区，入驻博客园科技品牌专区</a><br><a href="https://www.cnblogs.com/cmt/p/15147135.html" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-众安保险&#39;)">【推广】园子与爱卡汽车爱宝险合作，随手就可以买一份的百万医疗保险</a><br></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+             <a onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;Pangle-C1&#39;)" target="_blank" rel="nofollow" href="https://c.gridsumdissector.com/r/?gid=gad_545_ph4hkwzt&amp;ck=32&amp;adk=442&amp;autorefresh=__AUTOREFRESH__">
+                <img style="width: 300px; height: 250px;" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/35695-20210817131346802-930113090.jpg" alt="" onload="gscmdImpress()">
+             </a>
+    </div>
+    <div id="under_post_card1"><div class="under-post-card">
+<b>编辑推荐：</b>
+<br>
+
+· <a href="https://www.cnblogs.com/coco1s/p/15292365.html" target="_blank">妙用 background 实现花式文字效果</a>
+    <br>
+· <a href="https://www.cnblogs.com/failymao/p/15270302.html" target="_blank">Go 并发编程 -- 正确使用 goroutine</a>
+    <br>
+· <a href="https://www.cnblogs.com/dragonir/p/15265372.html" target="_blank">前端瓦片地图加载之塞尔达传说旷野之息</a>
+    <br>
+· <a href="https://www.cnblogs.com/yexiaochai/p/15260657.html" target="_blank">技术管理进阶 —— 关于成本优化与利益分配机制</a>
+    <br>
+· <a href="https://www.cnblogs.com/vvjiang/p/15240799.html" target="_blank">微前端框架single-spa初探</a>
+    <br>
+</div></div>
+    <div id="under_post_card2"><div class="itnews under-post-card">
+    <b>最新新闻</b>：
+    <br>
+ ·          <a href="https://news.cnblogs.com/n/702415/" target="_blank">3 名航天员离开空间站前敬礼致谢：离地 90 天圆满完成任务（2021-09-16 17:07）</a>
+        <br>
+ ·          <a href="https://news.cnblogs.com/n/702414/" target="_blank">美国网络安全企业于2016年向阿联酋出售了iMessage漏洞利用工具（2021-09-16 17:03）</a>
+        <br>
+ ·          <a href="https://news.cnblogs.com/n/702413/" target="_blank">麻省理工科学家发现一类新的基因编辑酶 在某些方面或胜过CRISPR（2021-09-16 16:55）</a>
+        <br>
+ ·          <a href="https://news.cnblogs.com/n/702412/" target="_blank">Anonymous曝光域名注册提供商Epik 180GB数据（2021-09-16 16:49）</a>
+        <br>
+ ·          <a href="https://news.cnblogs.com/n/702411/" target="_blank">“食物银行”入驻淘宝：专供临期食品，只需1分钱（2021-09-16 16:40）</a>
+        <br>
+    » <a href="https://news.cnblogs.com/" title="IT 新闻" target="_blank">更多新闻...</a>
+</div></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+       var commentManager = new blogCommentManager();
+       commentManager.renderComments(0);
+       fixPostBody();
+       deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);       deliverT2();
+       deliverC1C2();
+       loadNewsAndKb();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+       GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+       loadOptUnderPost();
+       GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem"><!--done-->
+<h3 class="catListTitle">公告</h3>
+
+<div id="blog-news">
+    <a href="https://clustrmaps.com/site/1acvr" title="Visit tracker"><img src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/map_v2.png"></a>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript">window['__document_write_ajax_callbacks__']['4']();</script><script type="text/javascript">window['__document_write_ajax_callbacks__']['5']();</script><script async="">window['__document_write_ajax_callbacks__']['1']();</script>
+<script type="text/javascript">window['__document_write_ajax_callbacks__']['6']();</script><script>window['__document_write_ajax_callbacks__']['2']();</script>
+    <div id="profile_block">
+        昵称：
+        <a href="https://home.cnblogs.com/u/jins-note/">
+            Jerry_Jin
+        </a>
+        <br>
+        园龄：
+        <a href="https://home.cnblogs.com/u/jins-note/" title="入园时间：2018-08-21">
+            3年
+        </a>
+        <br>
+        粉丝：
+        <a href="https://home.cnblogs.com/u/jins-note/followers/">
+            55
+        </a>
+        <br>
+        关注：
+        <a href="https://home.cnblogs.com/u/jins-note/followees/">
+            0
+        </a>
+        <div id="p_b_follow">
+<a href="javascript:void(0)" onclick="follow(&#39;3c2a710e-6cbc-44b6-8536-08d60693dd81&#39;)">+加关注</a></div>
+        <script type="text/javascript">window['__document_write_ajax_callbacks__']['7']();</script><script>window['__document_write_ajax_callbacks__']['3']();</script>
+    </div>
+</div>
+
+</div>
+<div id="sidebar_c3" style="display: block;"><a href="https://c.gridsumdissector.com/r/?gid=gad_545_nysfvjry&amp;ck=38&amp;adk=474&amp;autorefresh=__AUTOREFRESH__" target="_blank"><img width="300" height="250" src="./三阶魔方7步还原法详解 简单 - Jerry_Jin - 博客园_files/35695-20210903181503211-1858930220.jpg" alt="字节雇主校招" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;C3-字节-雇主校招&#39;);"></a></div>
+			<div id="blog-calendar" style="">
+
+<table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar" border="0">
+    <tbody>
+        <tr>
+            <td colspan="7">
+                <table class="CalTitle" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="CalNextPrev">
+                                <a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2021/08/16&#39;); return false;">&lt;</a>
+                            </td>
+                            <td align="center">2021年9月</td>
+                            <td align="right" class="CalNextPrev">
+                                <a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2021/10/16&#39;); return false;">&gt;</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    <tr>
+        <th class="CalDayHeader" align="center" abbr="日" scope="col">日</th>
+        <th class="CalDayHeader" align="center" abbr="一" scope="col">一</th>
+        <th class="CalDayHeader" align="center" abbr="二" scope="col">二</th>
+        <th class="CalDayHeader" align="center" abbr="三" scope="col">三</th>
+        <th class="CalDayHeader" align="center" abbr="四" scope="col">四</th>
+        <th class="CalDayHeader" align="center" abbr="五" scope="col">五</th>
+        <th class="CalDayHeader" align="center" abbr="六" scope="col">六</th>
+    </tr>
+            <tr>
+                            <td class="CalOtherMonthDay" align="center">29</td>
+                            <td class="CalOtherMonthDay" align="center">30</td>
+                            <td class="CalOtherMonthDay" align="center">31</td>
+                        <td class="" align="center">
+                            1
+                        </td>
+                        <td class="" align="center">
+                            2
+                        </td>
+                        <td class="" align="center">
+                            3
+                        </td>
+                    <td class="CalWeekendDay" align="center">
+                        4
+                    </td>
+            </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            5
+                        </td>
+                            <td class="" align="center">
+                                6
+                            </td>
+                            <td class="" align="center">
+                                7
+                            </td>
+                            <td class="" align="center">
+                                8
+                            </td>
+                            <td class="" align="center">
+                                9
+                            </td>
+                            <td class="" align="center">
+                                10
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            <a href="https://www.cnblogs.com/jins-note/archive/2021/09/11.html"><u>11</u></a>
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            12
+                        </td>
+                            <td class="" align="center">
+                                13
+                            </td>
+                            <td class="" align="center">
+                                14
+                            </td>
+                            <td class="" align="center">
+                                15
+                            </td>
+                            <td class="CalTodayDay" align="center">
+                                16
+                            </td>
+                            <td class="" align="center">
+                                17
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            18
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            19
+                        </td>
+                            <td class="" align="center">
+                                20
+                            </td>
+                            <td class="" align="center">
+                                21
+                            </td>
+                            <td class="" align="center">
+                                22
+                            </td>
+                            <td class="" align="center">
+                                23
+                            </td>
+                            <td class="" align="center">
+                                24
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            25
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            26
+                        </td>
+                            <td class="" align="center">
+                                27
+                            </td>
+                            <td class="" align="center">
+                                28
+                            </td>
+                            <td class="" align="center">
+                                29
+                            </td>
+                            <td class="" align="center">
+                                30
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                1
+                            </td>
+                        <td class="CalOtherMonthDay" align="center">
+                            2
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalOtherMonthDay" align="center">
+                            3
+                        </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                4
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                5
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                6
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                7
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                8
+                            </td>
+                        <td class="CalOtherMonthDay" align="center">
+                            9
+                        </td>
+                </tr>
+    </tbody>
+</table></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><!-- 搜索 -->
+<div id="sidebar_search" class="sidebar-block">
+    <div id="sidebar_search" class="mySearch">
+        <h3 class="catListTitle">搜索</h3>
+        <div id="sidebar_search_box">
+            <div id="widget_my_zzk" class="div_my_zzk">
+                <input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk">
+            </div>
+            <div id="widget_my_google" class="div_my_zzk">
+                <input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 常用链接 -->
+<div id="sidebar_shortcut" class="sidebar-block"><div class="catListLink">
+<h3 class="catListTitle">
+常用链接
+</h3>
+<ul>
+    
+<li><a href="https://www.cnblogs.com/jins-note/p/" title="我的博客的随笔列表">我的随笔</a></li>
+<li><a href="https://www.cnblogs.com/jins-note/MyComments.html" title="我的发表过的评论列表">我的评论</a></li>
+<li><a href="https://www.cnblogs.com/jins-note/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li>
+<li><a href="https://www.cnblogs.com/jins-note/RecentComments.html" title="我的博客的评论列表">最新评论</a></li>
+<li><a href="https://www.cnblogs.com/jins-note/tag/" title="我的博客的标签列表">我的标签</a></li>
+
+</ul>
+</div>
+
+</div>
+
+<!-- 最新随笔 -->
+
+
+<!-- 我的标签 -->
+<div id="sidebar_toptags" class="sidebar-block"></div>
+
+<!-- 积分与排名 -->
+<div id="sidebar_scorerank" class="sidebar-block"><div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	
+524264
+	</li>
+	<li class="liRank">
+		排名 -	
+859
+	</li>
+</ul>
+</div>
+
+
+
+</div>
+
+<!-- 随笔分类、随笔档案、文章分类、新闻分类、相册、链接 -->
+<div id="sidebar_categories">
+
+    <div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+        <h3 class="catListTitle">
+            
+随笔分类
+
+
+
+        </h3>
+
+        <ul>
+
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283334.html" rel="" target="">
+    Android(4)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283199.html" rel="" target="">
+    APM(5)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283300.html" rel="" target="">
+    C++(10)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283200.html" rel="" target="">
+    Debug(26)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283216.html" rel="" target="">
+    Deep Learning(113)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283211.html" rel="" target="">
+    Hadoop(14)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283202.html" rel="" target="">
+    Latex(9)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283195.html" rel="" target="">
+    Linux(66)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283209.html" rel="" target="">
+    Mathematica(1)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283319.html" rel="" target="">
+    Matlab(8)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283206.html" rel="" target="">
+    MySQL(13)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283198.html" rel="" target="">
+    OpenCV(11)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283205.html" rel="" target="">
+    Others(18)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1284270.html" rel="" target="">
+    Python(23)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1291927.html" rel="" target="">
+    Writing(4)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283201.html" rel="" target="">
+    建站(7)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283203.html" rel="" target="">
+    树莓派(8)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1375785.html" rel="" target="">
+    算法(9)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/jins-note/category/1283197.html" rel="" target="">
+    姿态解算(12)
+</a>
+ 
+                </li>                
+            <li>
+                <a href="javascript:void(0)" onclick="sideColumnManager.loadMore(this)">更多</a>
+            </li>
+        </ul>
+
+
+    </div>    
+</div>
+
+<!-- 最新评论 -->
+
+
+
+<!-- 阅读排行榜 -->
+<div id="sidebar_topviewedposts" class="sidebar-block"><div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock">
+        <ul style="word-break:break-all">
+                    <li>
+                        <a href="https://www.cnblogs.com/jins-note/p/10749533.html">
+                            1. 三阶魔方7步还原法详解 简单(315857)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jins-note/p/9513335.html">
+                            2. 怎样修复grub开机引导(grub rescue)(59138)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jins-note/p/10215511.html">
+                            3. KCF跟踪算法原理 入门详解(50645)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jins-note/p/9548050.html">
+                            4. OSMC Vs. OpenELEC Vs. LibreELEC – Kodi Operating System Comparison(48062)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jins-note/p/9636969.html">
+                            5. linux 根据进程名杀死进程 －kill进程名(32804)
+                        </a>
+                    </li>
+        </ul>
+    </div>
+</div>
+
+</div>
+
+<!-- 评论排行榜 -->
+<div id="sidebar_topcommentedposts" class="sidebar-block"><div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock">
+        <ul style="word-break:break-all">
+                    <li>
+                        <a href="https://www.cnblogs.com/jins-note/p/9734771.html">
+                            1. keras Lambda 层(10)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jins-note/p/10749533.html">
+                            2. 三阶魔方7步还原法详解 简单(6)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jins-note/p/9673883.html">
+                            3. 安装部署 OpenPAI  Install OpenPAI on Ubuntu(6)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jins-note/p/11884182.html">
+                            4. Non-local Neural Networks 原理详解及自注意力机制思考(5)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jins-note/p/9513426.html">
+                            5. Hadoop、Hive、Spark 之间关系(5)
+                        </a>
+                    </li>
+        </ul>
+    </div>
+</div>
+
+</div>
+
+<!-- 推荐排行榜 -->
+<div id="sidebar_topdiggedposts" class="sidebar-block">
+<div id="topdigg_posts_wrap">
+    <div class="catListView">
+        <h3 class="catListTitle">推荐排行榜</h3>
+        <div id="TopDiggPostsBlock">
+            <ul style="word-break: break-all">
+                        <li>
+                            <a href="https://www.cnblogs.com/jins-note/p/9513426.html">
+                                1. Hadoop、Hive、Spark 之间关系(14)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/jins-note/p/10215511.html">
+                                2. KCF跟踪算法原理 入门详解(4)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/jins-note/p/9550388.html">
+                                3. Python中os.listdir的排序问题(4)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/jins-note/p/9734771.html">
+                                4. keras Lambda 层(3)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/jins-note/p/9679450.html">
+                                5. 知识蒸馏（Distillation）(3)
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+</div></div></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright © 2021 Jerry_Jin
+<br><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8NACB8VE9qlHm6Ujjqxvg5D2MjeEiW5mvFGJbB5J1dqB5S128YEtB5X0F2bu_JZl7Mzoz7qZZ0rbgGvC0qolei8d9f07V3B510j1K6xLgEzAG4VGYthK7bLrqHImA6PceVbNCjnGUZrXvrAAcxAGLvI">
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+var oMeta = document.createElement('meta');
+oMeta.charset = 'utf-8';
+oMeta.name='google-site-verification'
+oMeta.content='XPr7ud41rS116Z9geDr3HwiX8Qutr98XkMrGOb_tAEE'
+document.getElementsByTagName('head')[0].appendChild(oMeta);
+
+        var node = document.getElementById("navList");
+        var childNode = node.getElementsByTagName('li');
+                //childNode[0].style.display = "none"; //隐藏"博客园" 
+                //childNode[2].style.display = "none"; //隐藏"新随笔"
+
+        var newNode_js = document.createElement("li");
+        newNode_js.innerHTML = "<a href='https://www.cnblogs.com/jins-note/p/9635362.html' class = 'menu'>关于</a>";
+        node.appendChild(newNode_js);
+
+var myurl=window.location.href
+var nodes = document.getElementById("MySignature");
+if (myurl=="https://www.cnblogs.com/jins-note/p/9635362.html"){
+  nodes .remove();
+}
+else if(nodes !=null){
+var newNode_jss = document.createElement("p");
+ newNode_jss .innerHTML = "出处：<a href=\""+myurl+"\" >"+myurl+"</a>";
+nodes.appendChild(newNode_jss );
+}
+
+
+
+
+
+
+});
+    </script><script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-73407479-2');
+</script><script type="text/javascript">getFollowStatus('3c2a710e-6cbc-44b6-8536-08d60693dd81');</script></body></html>

@@ -1,5 +1,7 @@
 ### Mybatis里的常用工具类
 
+> 参考Mybatis 3源码深度解析 姜荣波[著]
+
 #### 1.SQL类
 
 > 可以很方便地在Java代码中动态构建SQL语句
@@ -62,7 +64,9 @@
 > 优雅地获取和设置对象的属性值
 
 ```java
-  @Before
+	private	User userEntity;
+
+	@Before
     public void before() {
         List<Order> orders = new ArrayList<>(2);
         orders.add(new Order("1", "订单1", 10D));
@@ -90,7 +94,7 @@
     @Test
     public void testObjectClazz() throws InvocationTargetException, IllegalAccessException {
         MetaClass userClazz = MetaClass.forClass(User.class, new DefaultReflectorFactory());
-        // 获取所有的Getter
+        // 获取所有的Getter 包括父类和实现的接口的
         String[] getterNames = userClazz.getGetterNames();
         for (String getterName : getterNames) {
             System.out.println(getterName);
@@ -160,13 +164,13 @@ public class ZyyObjectFactory extends DefaultObjectFactory {
     }
 ```
 
-#### 7.ProxyFActory
+#### 7.ProxyFactory
 
 > ProxyFactory是MyBatis中的代理工厂，主要用于创建动态代理对象，ProxyFactory接口有两个实现，分别为CglibProxyFactory和JavassistProxyFactory。从实现类的名称可以看出，MyBatis支持两种动态代理策略，分别为Cglib和Javassist动态代理。
 >
 > ProxyFactory主要用于实现MyBatis的懒加载功能。当开启懒加载后，MyBatis创建Mapper映射结果对象后，会通过ProxyFactory创建映射结果对象的代理对象。当我们调用代理对象的Getter方法获取数据时，会执行CglibProxyFactory或JavassistProxyFactory中定义的拦截逻辑，然后执行一次额外的查询
 
-```
+```java
    @Test
     public void testProxyFactory(){
         ProxyFactory proxyFactory = new JavassistProxyFactory();

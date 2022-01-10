@@ -1,0 +1,12 @@
+/* 设置签名格式 定制css样式 */
+#MySignature {
+    display: none;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #6B6B6B;
+    padding: 10px;
+    line-height: 1.15;
+    text-shadow: 1px 1px 1px #FFF;
+    font-size: 13px;
+    font-family: 'Microsoft Yahei';
+}

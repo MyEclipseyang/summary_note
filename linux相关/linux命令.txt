@@ -13,3 +13,4 @@
 12. find /home/lifeccp/dicom/studies -mtime +21 -name "*.*" -exec rm -Rf {} \; 按时间批量删除文件
 13. du -sh ./* 显示文件大小
 14. ln -s /home/zyy/start-someserver.sh /user/bin/start-someserver 相当于window下的bin的环境变量
+15. du -ah --max-depth=1 /bak | sort -n 显示bak目录下文件的大小并排序

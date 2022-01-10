@@ -1,9 +1,9 @@
-###mysql版本：5.7
+### mysql版本：5.7
 
-##备份到指定文件
+## 备份到指定文件
 mysqldump -uroot -p  yxshop > /home/zyy/yxshop.sql
 
-##修改root密码
+## 修改root密码
 #前置工作：
  1. 查看关于对密码的限制
  SHOW VARIABLES LIKE 'validate_password%';
