@@ -22,3 +22,15 @@
 > 如果提示Downloaded bytes did not match Content-Length
 >
 > conda config --set remote_read_timeout_secs 1000.0
+
+#### 3.Anconda navigator
+
+> 可视化管理界面
+>
+> 管理env(环境)
+>
+> 管理各个环境中的依赖包
+
+#### 4.jupyter
+
+> 可以非常方便的执行python代码
